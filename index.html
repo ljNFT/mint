@@ -558,7 +558,7 @@
 
                     contract = new web3.eth.Contract(ABI, ADDRESS);
                     document.getElementById('mint').onclick = () => {
-                        contract.methods.mint(account).send({ from: account, value: "1000000000000000000"})
+                        contract.methods.mint(account).send({ from: account, value: "10000000000000000"})
                     }
                 }
             })();
