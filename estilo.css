@@ -6,3 +6,6 @@ body {
     height: 100vh;
 }
 
+span {
+    display: none;
+}
