@@ -18,4 +18,6 @@ button{
     color: white;
     cursor: pointer;
     outline: none;
+    font-family: 'Righteous', cursive;
+    border-radius: 20%;
 }
