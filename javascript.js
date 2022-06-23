@@ -1,6 +1,6 @@
-            var account = null;
-            var contract = null;
-            const ABI = [
+var account = null;
+var contract = null;
+const ABI = [
 	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
@@ -532,21 +532,20 @@
 		"stateMutability": "view",
 		"type": "function"
 	}
-];
-            const ADDRESS = "0x2De49f924cEDfFBC30d34c3597dAfB5D0ae25234";
-            (async () => {
-                if (window.ethereum) {
-                    await window.ethereum.send('eth_requestAccounts');
-                    window.web3 = new Web3(window.ethereum);
+]
+const ADDRESS = "0x6e4AfD6b7f9D53CF13765266aB3b70ECe0AB9294";
+(async () => {
+	if (window.ethereum) {
+		await window.ethereum.send('eth_requestAccounts');
+		window.web3 = new Web3(window.ethereum);
 
-                    var accounts = await web3.eth.getAccounts();
-                    account = accounts[0];
-                    document.getElementById('wallet-address').textContent = account;
+		var accounts = await web3.eth.getAccounts();
+		account = accounts[0];
+		document.getElementById('wallet-address').textContent = account;
 
-                    contract = new web3.eth.Contract(ABI, ADDRESS);
-                    document.getElementById('mint').onclick = () => {
-                        contract.methods.mint(account).send({ from: account, value: "1000000000000000000"})
-                    }
-                }
-            })();
-        
+		contract = new web3.eth.Contract(ABI, ADDRESS);
+		document.getElementById('mint').onclick = () => {
+			contract.methods.mint(account).send({ from: account, value: "5000000000000000000"})
+		}
+	}
+})();
